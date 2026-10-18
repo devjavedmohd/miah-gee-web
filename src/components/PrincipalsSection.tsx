@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { MANUFACTURERS } from '@/data/manufacturers';
 import { PRODUCTS } from '@/data/products';
 import type { ManufacturerId } from '@/lib/types';
+import { ArrowRight } from 'lucide-react';
 
 export default function PrincipalsSection() {
   const mfKeys = Object.keys(MANUFACTURERS) as ManufacturerId[];
@@ -39,9 +41,9 @@ export default function PrincipalsSection() {
                 <p className="principal-focus">{mf.focus}</p>
 
                 <div className="principal-card-footer">
-                  <a href={`#products`} className="principal-link">
-                    View Products →
-                  </a>
+                  <Link href={`/products?manufacturer=${key}`} className="principal-link flex-inline-icon">
+                    View Products <ArrowRight size={14} strokeWidth={2} />
+                  </Link>
                 </div>
               </div>
             );

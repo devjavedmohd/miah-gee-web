@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import AboutSection from '@/components/AboutSection';
 import PrincipalsSection from '@/components/PrincipalsSection';
+import AboutHashRedirect from './AboutHashRedirect';
 
 export const metadata: Metadata = {
   title: 'About Us | Miah Gee Distributor (Pvt) Ltd. Peshawar',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="about-page-wrapper">
+      <AboutHashRedirect />
       <div className="page-hero-banner">
         <div className="w">
           <span className="section-eyebrow">Company Profile</span>

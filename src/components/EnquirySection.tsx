@@ -1,5 +1,6 @@
 'use client';
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 import { COMPANY, getWhatsAppUrl } from '@/data/company';
 import { useEnquiry } from './EnquiryContext';
 import { CATEGORIES } from '@/data/categories';
@@ -91,9 +92,9 @@ export default function EnquirySection() {
                   <p className="empty-hint">
                     Click <b>+ Add</b> on any product card in the catalogue to build your quote request, or submit a general enquiry below.
                   </p>
-                  <a href="#products" className="btn btn-sm btn-outline mt-2">
+                  <Link href="/products" className="btn btn-sm btn-outline mt-2">
                     Browse Catalogue
-                  </a>
+                  </Link>
                 </div>
               ) : (
                 <div className="selected-items-scroll">

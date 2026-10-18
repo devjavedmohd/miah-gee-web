@@ -1,5 +1,6 @@
 'use client';
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 import { useEnquiry } from './EnquiryContext';
 import { COMPANY, getWhatsAppUrl } from '@/data/company';
 import { CATEGORIES } from '@/data/categories';
@@ -116,7 +117,7 @@ export default function EnquiryDrawer() {
                   </div>
                   <h4>Your enquiry list is empty</h4>
                   <p>Browse the catalogue and click <b>+ Add</b> on any product to assemble your trade order list.</p>
-                  <a href="#products" className="btn btn-primary" onClick={closeDrawer}>Browse Products</a>
+                  <Link href="/products" className="btn btn-primary" onClick={closeDrawer}>Browse Products</Link>
                 </div>
               ) : (
                 <>

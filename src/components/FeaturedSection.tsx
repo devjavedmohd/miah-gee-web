@@ -57,7 +57,7 @@ export default function FeaturedSection() {
                   </div>
                 </Link>
 
-                <div className="featured-card-actions-wrapper">
+                <div className="featured-card-actions">
                   <button
                     type="button"
                     className={`btn btn-sm ${isAdded ? 'btn-added' : 'btn-add'}`}
@@ -66,6 +66,7 @@ export default function FeaturedSection() {
                       e.stopPropagation();
                       toggleProduct(product);
                     }}
+                    aria-label={isAdded ? `Remove ${product.name} from enquiry list` : `Add ${product.name} to enquiry list`}
                   >
                     {isAdded ? (
                       <span className="flex-inline-icon"><Check size={14} strokeWidth={2.4} /> Added</span>
@@ -75,9 +76,10 @@ export default function FeaturedSection() {
                   </button>
                   <Link
                     href={`/products/${product.slug}`}
-                    className="btn btn-sm btn-ghost flex-inline-icon"
+                    className="btn btn-sm btn-featured-details"
+                    aria-label={`View trade details for ${product.name}`}
                   >
-                    <Eye size={14} strokeWidth={1.8} /> Details
+                    <span className="flex-inline-icon"><Eye size={14} strokeWidth={1.8} /> Details</span>
                   </Link>
                 </div>
               </div>
